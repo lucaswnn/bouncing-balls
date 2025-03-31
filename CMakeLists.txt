@@ -6,11 +6,14 @@ project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(SDL2 2.32.2 EXACT REQUIRED)
-include_directories(include)
-add_executable(${PROJECT_NAME} src/main.cpp
-        src/Circle.cpp
-        src/Coord.cpp
-        src/Color.cpp
-        src/Context.cpp
+add_executable(${PROJECT_NAME} Source/Main.cpp
+        Source/Actors/Circle.cpp
+        Source/Misc/Color.cpp
+        Source/Context.cpp
+        Source/Components/Component.cpp
+        Source/Actors/Actor.cpp
+        Source/Tools/Math.cpp
+        Source/Components/DrawComponent.cpp
+        Source/Components/CircleDrawComponent.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})

@@ -1,7 +1,7 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-#include "Color.h"
+#include "../Misc/Color.h"
 
 namespace Colors
 {
@@ -21,10 +21,19 @@ namespace WindowParams
     constexpr int windowFlags = 0;
 }
 
-namespace RendererParams
+namespace SDLParams
 {
+    constexpr int SDLInitFlags = SDL_INIT_VIDEO;
     constexpr int rendererFlags =
             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
+}
+
+namespace TimeParams
+{
+    constexpr float MAX_FRAME_RATE_MS = 1000.0f / 60.0f;
+    constexpr int MAX_FRAME_RATE_INT_MS = 16;
+    constexpr float MAX_DELTA_TIME = 0.05f;
+    constexpr float GRAVITY_ACCELERATION = 1000.0f;
 }
 
 #endif //DEFINITIONS_H
